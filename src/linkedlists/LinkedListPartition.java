@@ -9,7 +9,7 @@ public class LinkedListPartition {
         if(head ==null || head.next == null){
             return  head;
         }
-int ax = 0;
+
         Node lessHead = new Node(0);
         Node lessTail = lessHead;
         Node greaterHead = new Node(0);
