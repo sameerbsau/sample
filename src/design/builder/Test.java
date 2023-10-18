@@ -8,5 +8,10 @@ public class Test {
                 .build();
 
         System.out.println(computer);
+
+        Computer.ComputerBuilder builder = new Computer.ComputerBuilder("","");
+        builder.setBluetoothEnabled(true);
+        builder.setBluetoothEnabled(true);
+        System.out.println(builder);
     }
 }

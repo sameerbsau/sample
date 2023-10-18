@@ -31,7 +31,15 @@ public class Computer {
         this.isBluetoothEnabled = builder.isBluetoothEnabled;
     }
 
-
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "HDD='" + HDD + '\'' +
+                ", RAM='" + RAM + '\'' +
+                ", isGraphicsEnabled=" + isGraphicsEnabled +
+                ", isBluetoothEnabled=" + isBluetoothEnabled +
+                '}';
+    }
 
     public static class ComputerBuilder{
         private String HDD;
