@@ -35,6 +35,15 @@ public class OneStack {
         return arr[top--];
     }
 
+    public int peek(){
+        if(isEmpty()){
+            System.out.println("stack is empty");
+            System.exit(1);
+        }
+        return arr[top];
+    }
+
+
     public  void print(){
 
         for(int i =0; i <= top; i++){
@@ -49,12 +58,12 @@ public class OneStack {
         stack.push(3);
         stack.push(4);
         stack.push(5);
-
+        System.out.println("test"+stack.peek());
         stack.print();
 
         stack.pop();
         stack.pop();
-
+        System.out.println("test"+stack.peek());
 
         stack.print();
     }
