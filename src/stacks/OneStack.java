@@ -46,7 +46,7 @@ public class OneStack {
 
     public  void print(){
 
-        for(int i =0; i <= top; i++){
+        for(int i =0; i <= top; ++i){
             System.out.println(arr[i]);
         }
     }
