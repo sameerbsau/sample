@@ -4,6 +4,7 @@ public class MergeSort {
     void merge(int arr[], int beg, int mid, int end) {
 
         int l = mid - beg + 1;
+        //if we dont add +1 here, since we are initialiing new array with length, the index will get different
         int r = end - mid;
 
         int LeftArray[] = new int[l];

@@ -1,13 +1,15 @@
 package TwentyAlgo.CyclicSort;
 
+import java.util.Arrays;
+
 public class CycleSort {
     public static void main(String[] args) {
-        int arr[] = {2, 7, 1, 5, 4, 6, 3};
-        //cycleSort0ToN(arr);
+        int arr[] = {2, 7, 1, 5, 4, 6, 3,0};
+        cycleSort0ToN(arr);
         //cycleSort1ToN(arr);
 
-        cycleSort(arr);
-        System.out.println();
+       // cycleSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     private static void cycleSort(int[] arr) {
