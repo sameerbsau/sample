@@ -23,7 +23,7 @@ public class DoublyLinkedList {
 }
 
 
-class DLL {
+class   DLL {
 
     class Node {
 
@@ -205,5 +205,84 @@ class DLL {
         System.out.println("length :" + length);
     }
 
+    public void swapFirstLast(){
+        if(length<2) return;
 
+        int temp = head.data;
+        head.data = tail.data;
+        tail.data= temp;
+    }
+
+    public void reverse() {
+        Node current = head;
+        Node temp = null;
+
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        temp = head;
+        head = tail;
+        tail = temp;
+    }
+
+    public boolean isPalindrome(){
+
+        Node startTemp = head;
+        Node endTemp = tail;
+        while(startTemp != endTemp){
+
+            if(startTemp.data == endTemp.data){
+                startTemp = startTemp.next;
+                endTemp = endTemp.prev;
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isPalindrome2() {
+        if (length <= 1) return true;
+
+        Node forwardNode = head;
+        Node backwardNode = tail;
+        for (int i = 0; i < length / 2; i++) {
+            if (forwardNode.data != backwardNode.data) return false;
+            forwardNode = forwardNode.next;
+            backwardNode = backwardNode.prev;
+        }
+        return true;
+    }
+
+    public void swapPairs() {
+        Node dummyNode = new Node(0);
+        dummyNode.next = head;
+        Node previousNode = dummyNode;
+
+        while (head != null && head.next != null) {
+            Node firstNode = head;
+            Node secondNode = head.next;
+
+            previousNode.next = secondNode;
+            firstNode.next = secondNode.next;
+            secondNode.next = firstNode;
+
+            secondNode.prev = previousNode;
+            firstNode.prev = secondNode;
+
+            if (firstNode.next != null) {
+                firstNode.next.prev = firstNode;
+            }
+
+            head = firstNode.next;
+            previousNode = firstNode;
+        }
+
+        head = dummyNode.next;
+        if (head != null) head.prev = null;
+    }
 }

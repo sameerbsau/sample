@@ -3,10 +3,10 @@ package series.RecursionAndBacktracking;
 public class General {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        //fun(5);
+        fun(5);
         //get the binary for the given input
         //toBinary(100);
-        //reverseNumber(543210);
+        reverseNumber(543210);
         int num = 0;
         //reverseNumber(543210, num);
         reverseString("543210", "", 0);

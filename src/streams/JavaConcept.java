@@ -23,7 +23,7 @@ public class JavaConcept {
 
         //find the frequency of each character in the given input string
         String inputString = "Java Concept Of The Day";
-        Map<String, Long> newans = Stream.of(inputString.toLowerCase().replace(" ","").split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<String, Long> newans = Stream.of(inputString.toLowerCase().replace(" ", "").split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(newans);
 
         Map<Character, Long> asp = inputString.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
@@ -31,7 +31,7 @@ public class JavaConcept {
 
         //find the frequesncy of each element in the list
         List<String> stationeryList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "Pencil");
-       Map<String, Long> newcs=  stationeryList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        Map<String, Long> newcs = stationeryList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(newcs);
 
         //how do you sort the given list of decimals in the reverse order
@@ -40,24 +40,24 @@ public class JavaConcept {
 
         //joining
         List<String> listOfStrings = Arrays.asList("Facebook", "Twitter", "YouTube", "WhatsApp", "LinkedIn");
-        System.out.println(listOfStrings.stream().collect(Collectors.joining(",","[","]")));
+        System.out.println(listOfStrings.stream().collect(Collectors.joining(",", "[", "]")));
 
         //print multiples of 5
         List<Integer> listOfIntegers = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
-        System.out.println(listOfIntegers.stream().filter(i-> i%5==0).collect(Collectors.toList()));
+        System.out.println(listOfIntegers.stream().filter(i -> i % 5 == 0).collect(Collectors.toList()));
 
         //max and min of the numbers
         System.out.println(listOfIntegers.stream().max(Comparator.naturalOrder()).get());
         System.out.println(listOfIntegers.stream().min(Comparator.naturalOrder()).get());
 
         //merge two unsortted arrays
-        int[] a = new int[] {4, 2, 7, 1};
-        int[] b = new int[] {8, 3, 9, 5};
-        IntStream.concat(Arrays.stream(a),Arrays.stream(b)).sorted().forEach(System.out::print);
+        int[] a = new int[]{4, 2, 7, 1};
+        int[] b = new int[]{8, 3, 9, 5};
+        IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().forEach(System.out::print);
 
         //merge two unsorted arrays to sorted array without duplicates
-        int[] aa = new int[] {4, 2, 5, 1};
-        int[] bb = new int[] {8, 1, 9, 5};
+        int[] aa = new int[]{4, 2, 5, 1};
+        int[] bb = new int[]{8, 1, 9, 5};
         IntStream.concat(Arrays.stream(aa), Arrays.stream(bb)).distinct().sorted().forEach(System.out::print);
 
         //get three max and three min from the given list
@@ -75,7 +75,7 @@ public class JavaConcept {
 
         //find the sum of all digits in stream
         int i = 15623;
-        int r =  Stream.of(String.valueOf(i).split("")).mapToInt(Integer::parseInt).reduce(0, (f,g)-> f+g);
+        int r = Stream.of(String.valueOf(i).split("")).mapToInt(Integer::parseInt).reduce(0, (f, g) -> f + g);
         System.out.println(r);
         System.out.println(Stream.of(String.valueOf(i).split("")).collect(Collectors.summingInt(Integer::parseInt)));
         System.out.println(Stream.of(String.valueOf(i).split("")).mapToInt(Integer::parseInt).sum());
@@ -107,23 +107,22 @@ public class JavaConcept {
 
         //find sum of first 10 natural numbers
 
-        System.out.println(IntStream.range(1,10).sum());
+        System.out.println(IntStream.range(1, 10).sum());
 
         //reverse and integer array
-        int[] array = new int[] {5, 1, 7, 3, 9, 6};
-        System.out.println(Arrays.toString(IntStream.rangeClosed(1,array.length).map(X -> array[array.length-X]).toArray()));
+        int[] array = new int[]{5, 1, 7, 3, 9, 6};
+        System.out.println(Arrays.toString(IntStream.rangeClosed(1, array.length).map(X -> array[array.length - X]).toArray()));
 
         //print first 10 even numbers
-        IntStream.rangeClosed(1,10).map(m -> m*2).forEach(System.out::println);
+        IntStream.rangeClosed(1, 10).map(m -> m * 2).forEach(System.out::println);
 
         //find the most repeated element in an array
         List<String> listOfStrings2 = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Pen", "Note Book", "Pencil");
-        System.out.println(listOfStrings2.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
-                .entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey());
+        System.out.println(listOfStrings2.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey());
 
         //palindrom of string
         String str3 = "ROTATOR";
-        System.out.println(IntStream.range(0, str3.length()/2).noneMatch(f -> str3.charAt(f) != str3.charAt(str3.length() - f-1)));
+        System.out.println(IntStream.range(0, str3.length() / 2).noneMatch(f -> str3.charAt(f) != str3.charAt(str3.length() - f - 1)));
 
         //give the list of string find the numbers that start with number
         List<String> listOfStrings4 = Arrays.asList("One", "2wo", "3hree", "Four", "5ive", "Six");
@@ -139,43 +138,29 @@ public class JavaConcept {
 
         Set<String> uniqueChars = new HashSet<>();
 
-        Set<String> duplicateChars =
-                Arrays.stream(inputString3.split(""))
-                        .filter(ch -> ! uniqueChars.add(ch))
-                        .collect(Collectors.toSet());
+        Set<String> duplicateChars = Arrays.stream(inputString3.split("")).filter(ch -> !uniqueChars.add(ch)).collect(Collectors.toSet());
 
         //find first repeated charcter in a string
-        System.out.println(Stream.of(inputString3.split("")).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
-                .entrySet().stream().filter(f -> f.getValue() > 1).map(Map.Entry::getKey).findFirst().get());
+        System.out.println(Stream.of(inputString3.split("")).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())).entrySet().stream().filter(f -> f.getValue() > 1).map(Map.Entry::getKey).findFirst().get());
 
         //find first non repeated character
-        System.out.println(Stream.of(inputString3.split("")).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
-                .entrySet().stream().filter(f -> f.getValue() == 1).map(Map.Entry::getKey).findFirst().get());
+        System.out.println(Stream.of(inputString3.split("")).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())).entrySet().stream().filter(f -> f.getValue() == 1).map(Map.Entry::getKey).findFirst().get());
 
         //fibonace series
-        Stream.iterate(new int[] {0, 1}, f -> new int[] {f[1], f[0]+f[1]})
-                .limit(10)
-                .map(f -> f[0])
-                .forEach(x -> System.out.print(x+" "));
+        Stream.iterate(new int[]{0, 1}, f -> new int[]{f[1], f[0] + f[1]}).limit(10).map(f -> f[0]).forEach(x -> System.out.print(x + " "));
 
         //first 10 odd numbers
-        Stream.iterate(new int[] {1, 3}, f -> new int[] {f[1], f[1]+2})
-                .limit(10)
-                .map(f -> f[0])
-                .forEach(x -> System.out.print(x+" "));
+        Stream.iterate(new int[]{1, 3}, f -> new int[]{f[1], f[1] + 2}).limit(10).map(f -> f[0]).forEach(x -> System.out.print(x + " "));
 
         //get the last element of the array
         List<String> listOfStrings9 = Arrays.asList("One", "Two", "Three", "Four", "Five", "Six");
-        System.out.println(listOfStrings9.stream().skip(listOfStrings9.size()-1).findFirst().get());
+        System.out.println(listOfStrings9.stream().skip(listOfStrings9.size() - 1).findFirst().get());
 
 
         String failed = "Java developer";
-
-      String rieroge=  Arrays.stream(failed.split(" ")).collect(Collectors.joining());
+//      failed.chars().allMatch(Character::isLetter);
+        String rieroge = Arrays.stream(failed.split(" ")).collect(Collectors.joining());
         System.out.println(rieroge);
-
-
-
 
 
     }
