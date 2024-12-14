@@ -4,8 +4,8 @@ public class MaxOfArray {
     public static void main(String[] args) {
         int arr[] = {1,4,2,10,2,3,1,0,20};
         int k = 4;
-       // int result = bruteForce(arr, k);
-        int result1 = anotherApproach(arr,k);
+       int result1 = bruteForce(arr, k);
+       // int result1 = anotherApproach(arr,k);
         System.out.println(result1);
     }
 

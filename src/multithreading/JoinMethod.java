@@ -18,6 +18,7 @@ public class JoinMethod {
         //start third thread only when first thread is dead
         try {
             t1.join();
+            t2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

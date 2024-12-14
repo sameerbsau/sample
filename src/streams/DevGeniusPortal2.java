@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 //https://blog.devgenius.io/java-8-real-time-coding-interview-questions-and-answers-fce01f3c4080
-//https://javaconceptoftheday.com/java-8-interview-sample-coding-questions/
+
 public class DevGeniusPortal2 {
 
     public static void main(String[] args) {
@@ -56,7 +56,7 @@ public class DevGeniusPortal2 {
         //Find out the oldest employee, his/her age and department?
         Employee e = employeeList.stream().max(Comparator.comparingInt(Employee::getAge)).get();
         System.out.println(e);
-
+        employeeList.stream().sorted(Comparator.comparingInt(Employee::getAge).reversed()).limit(1).forEach(System.out::println);
         //Find out the average and total salary of the organization
         DoubleSummaryStatistics stat = employeeList.stream().collect(Collectors.summarizingDouble(Employee::getSalary));
         System.out.println(stat.getSum() + "" + stat.getAverage());

@@ -168,9 +168,7 @@ class HashTable {
 
             numMap.put(i,i);
         }
-
         return new int[]{};
-
     }
 //here we need to return the index
     public static int[] twoSumindex(int[] nums, int target) {
@@ -291,5 +289,6 @@ public class HashTableExample {
 
         System.out.println(Arrays.toString(HashTable.twoSum(new int[]{1,2,3,4,5}, 25)));
         System.out.println(Arrays.toString(HashTable.twoSum2(new int[]{1,2,3,4,5}, 5)));
+        System.out.println(HashTable.longestConsecutiveSequence(new int[]{100, 4, 200, 1, 3, 2}));
     }
 }

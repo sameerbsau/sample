@@ -26,7 +26,6 @@ interface Interface2 {
         System.out.println("I2 logging::" + str);
     }
 
-
 }
 
 public class DefaultAndStaticMethods implements Interface1, Interface2 {

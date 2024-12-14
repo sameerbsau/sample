@@ -5,7 +5,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
+//https://javaconceptoftheday.com/java-8-interview-sample-coding-questions/
 public class JavaConcept {
     public static void main(String[] args) {
         //seperate even and odd number

@@ -83,7 +83,7 @@ class Heap {
 
     public static int findKthSmallest(int[] nums, int k) {
         Heap maxHeap = new Heap();
-
+// max heap is priority queue
         for (int num : nums) {
             maxHeap.insert(num);
             if (maxHeap.getHeap().size() > k) {

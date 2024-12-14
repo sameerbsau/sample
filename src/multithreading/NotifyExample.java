@@ -67,6 +67,7 @@ public class NotifyExample {
 
         Notifier notifier = new Notifier(msg);
         new Thread(notifier, "notifier").start();
+        new Thread(notifier, "notifier").start();
         System.out.println("All the threads are started");
     }
 }

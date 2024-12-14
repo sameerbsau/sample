@@ -1,4 +1,4 @@
-package thread;
+package multithreading;
 
 public class ThreadClass extends Thread{
 
