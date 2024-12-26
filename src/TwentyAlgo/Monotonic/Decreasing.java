@@ -23,7 +23,7 @@ public class Decreasing {
 
             // Construct the result array
             if (!stack.isEmpty()) {
-                result.add(stack.peek());
+                    result.add(stack.peek());
             } else {
                 result.add(-1);
             }

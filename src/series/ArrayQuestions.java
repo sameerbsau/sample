@@ -112,4 +112,40 @@ public class ArrayQuestions {
 
         return result;
     }
+//https://leetcode.com/problems/first-missing-positive/description/?envType=daily-question&envId=2024-03-26
+    //Input: nums = [3,4,-1,1]
+    //Output: 2
+    //Explanation: 1 is in the array but 2 is missing.
+    public static int firstMissingPositive(int[] nums){
+        int n = nums.length;
+        //mark numbers (num<0) and (num>0) with a special marker number(n+1)
+        for(int i =0; i< n;i++){
+            if(nums[i]<=0 || nums[i]> n){
+                nums[i] = n+1;
+            }
+        }
+        //mark visited cell appearing in the array
+        for(int i =0; i< n;i++){
+            int element = Math.abs(nums[i]);
+            if(element== n+1){
+                continue;
+            }
+            int seat = element-1;
+            if(nums[seat]>0){
+                nums[seat] = -nums[seat];
+            }
+        }
+        //find the first cell which is'nt negative
+        for(int i =0; i< n;i++){
+            if(nums[i]>0){
+                return i+1;
+            }
+        }
+        return n+1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {3,4,-1,1};
+        System.out.println(firstMissingPositive(nums));
+    }
 }

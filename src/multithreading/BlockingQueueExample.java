@@ -1,5 +1,6 @@
 package multithreading;
 
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -76,6 +77,9 @@ public class BlockingQueueExample {
     public static void main(String[] args) {
         //Creating BlockingQueue of size 10
         BlockingQueue<Message> queue = new ArrayBlockingQueue<>(10);
+        Queue queue1 = new LinkedList();
+        Deque deque = new ArrayDeque();
+        PriorityQueue pq = new PriorityQueue<>();
         Producer producer = new Producer(queue);
         Consumer consumer = new Consumer(queue);
         //starting producer to produce messages in queue
