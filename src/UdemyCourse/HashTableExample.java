@@ -2,7 +2,7 @@ package UdemyCourse;
 
 import java.util.*;
 
-class HashTable {
+class  HashTable {
     private int size = 7;
     private Node[] dataMap;
 
